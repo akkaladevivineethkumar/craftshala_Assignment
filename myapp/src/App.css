@@ -1,12 +1,3 @@
-/*--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-
-/*-- Reset Code --*/
-
 html,
 body,
 div,
@@ -94,6 +85,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 article,
 aside,
 details,
@@ -107,16 +99,19 @@ nav,
 section {
   display: block;
 }
+
 ol,
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -124,76 +119,88 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* start editing from here */
+
 a {
   text-decoration: none;
 }
+
 .txt-rt {
   text-align: right;
-} /* text align right */
+}
+
 .txt-lt {
   text-align: left;
-} /* text align left */
+}
+
 .txt-center {
   text-align: center;
-} /* text align center */
+}
+
 .float-rt {
   float: right;
-} /* float right */
+}
+
 .float-lt {
   float: left;
-} /* float left */
+}
+
 .clear {
   clear: both;
-} /* clear float */
+}
+
 .pos-relative {
   position: relative;
-} /* Position Relative */
+}
+
 .pos-absolute {
   position: absolute;
-} /* Position Absolute */
+}
+
 .vertical-base {
   vertical-align: baseline;
-} /* vertical align baseline */
+}
+
 .vertical-top {
   vertical-align: top;
-} /* vertical align top */
+}
+
 .underline {
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
   margin: 0 0 20px 0;
-} /* Add 5px bottom padding and a underline */
+}
+
 nav.vertical ul li {
   display: block;
-} /* vertical menu */
+}
+
 nav.horizontal ul li {
   display: inline-block;
-} /* horizontal menu */
+}
+
 img {
   max-width: 100%;
 }
+
 .current-time {
   font-size: 35px;
   font-weight: 100;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
+
 .current-date {
   font-size: 18px;
   font-weight: 100;
   letter-spacing: 1px;
 }
 
-/*-- //Reset Code --*/
-
-/*-- Index-Page-Styling --*/
-
 body {
-  /* background: url("./images/background.jpg"); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -203,7 +210,7 @@ body {
   -o-background-size: cover;
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  
+
 }
 
 body a {
@@ -231,6 +238,28 @@ h1 {
   background-color: rgba(0, 0, 0, 0.73);
 }
 
+.dark_container {
+  width: 65%;
+  height: 80vh;
+  margin: 50px auto;
+  background-color: rgb(237, 231, 231);
+}
+
+.dark_city {
+  width: 60%;
+  height: 100%;
+  float: left;
+  background: url("./images/lightimg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  min-height: 500px;
+  position: relative;
+  background-position-x: -30px;
+}
+
 .city {
   width: 60%;
   height: 100%;
@@ -250,10 +279,18 @@ h1 {
   float: right;
   font-family: "Oxygen", sans-serif;
   padding: 30px 30px 0 0;
+  color: #fff;
+
+}
+
+.dark_title {
+  float: right;
+  font-family: "Oxygen", sans-serif;
+  padding: 30px 30px 0 0;
+  color: black;
 }
 
 .title h2 {
-  color: #fff;
   font-size: 40px;
   font-weight: bold;
 }
@@ -261,7 +298,18 @@ h1 {
 .title h3 {
   font-size: 30px;
   font-weight: bold;
-  color: #eee;
+  margin-top: 0px;
+  text-align: right;
+}
+
+.dark_title h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.dark_title h3 {
+  font-size: 30px;
+  font-weight: bold;
   margin-top: 0px;
   text-align: right;
 }
@@ -270,6 +318,15 @@ h1 {
   position: absolute;
   bottom: 0;
   color: #fff;
+  width: 106%;
+  padding: 0 30px 10px 30px;
+  font-family: "Oxygen", sans-serif;
+}
+
+.dark_date-time {
+  position: absolute;
+  bottom: 0;
+  color: black;
   width: 106%;
   padding: 0 30px 10px 30px;
   font-family: "Oxygen", sans-serif;
@@ -315,7 +372,6 @@ div#txt {
 
 .forecast-icon {
   padding: 25px 0;
-  /* background: white; */
 }
 
 .today-weather h3 {
@@ -327,6 +383,17 @@ div#txt {
   padding-bottom: 10px;
   border-width: thin;
   border-bottom: 1px solid #eee;
+}
+
+.dark_today-weather h3 {
+  text-transform: capitalize;
+  font-size: 50px;
+  color: black;
+  width: 80%;
+  margin: 0 auto 10px;
+  padding-bottom: 10px;
+  border-width: thin;
+  border-bottom: 1px solid black;
 }
 
 .today-weather ul li {
@@ -341,12 +408,34 @@ div#txt {
   padding-left: 20px;
 }
 
+.dark_today-weather ul li {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 39px;
+  border-width: thin;
+  border-bottom: 1px solid #777;
+  color: black;
+  font-weight: 600;
+  text-align: left;
+  padding-left: 20px;
+}
+
 .today-weather ul li span {
   float: right;
   padding-right: 10px;
 }
 
+.dark_today-weather ul li span
+ {
+  float: right;
+  padding-right: 10px;
+}
+
 .today-weather ul li:nth-child(5) {
+  border-bottom: none;
+}
+
+.dark_today-weather ul li:nth-child(5) {
   border-bottom: none;
 }
 
@@ -361,22 +450,18 @@ div#txt {
 .copyright p a {
   color: #fff;
 }
-/*--w3layouts--*/
-/*--agileits--*/
+
 .copyright p a:hover {
   color: #ffeb3b;
 }
 
-/*-- //Index-Page-Styling --*/
-
-/*-- Responsive Code --*/
-
 @media screen and (max-width: 1920px) {
-  .container {
+
+  .container,
+  .dark_container {
     width: 90%;
     height: 85vh;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
   }
@@ -389,9 +474,11 @@ div#txt {
   h1 {
     font-size: 35px;
   }
+
   .temperature p {
     font-size: 100px;
   }
+
   .dmy {
     padding-top: 25px;
   }
@@ -401,12 +488,15 @@ div#txt {
   .temperature p {
     font-size: 80px;
   }
+
   .dmy {
     padding-top: 10px;
   }
+
   div#txt {
     font-size: 30px;
   }
+
   .forecast-icon img {
     width: 110px;
   }
@@ -417,7 +507,9 @@ div#txt {
     font-size: 40px;
     margin-top: 30px;
   }
-  .container {
+
+  .container,
+  .dark_container {
     width: 95%;
     margin-top: 30px;
   }
@@ -428,12 +520,15 @@ div#txt {
     font-size: 30px;
     margin-top: 45px;
   }
+
   div#txt {
     font-size: 25px;
   }
+
   .dmy {
     padding-top: 17px;
   }
+
   .temperature p {
     padding-bottom: 10px;
   }
@@ -443,29 +538,42 @@ div#txt {
   h1 {
     font-size: 35px;
   }
+
   .city {
     width: 100%;
     min-height: 300px;
   }
+
+  .dark_city {
+    width: 100%;
+    min-height: 300px;
+  }
+
   .temperature {
     text-align: right;
   }
+
   .temperature p {
     font-size: 100px;
   }
+
   .dmy {
     padding-top: 35px;
   }
+
   .forecast-icon {
     margin: 10px 0;
   }
+
   .forecast {
     width: 100%;
     padding-bottom: 30px;
   }
+
   .copyright {
     padding-bottom: 20px;
   }
+
   .copyright p {
     line-height: 30px;
     font-size: 14px;
@@ -480,77 +588,123 @@ div#txt {
     font-size: 28px;
     letter-spacing: 2px;
   }
-  .container {
+
+  .container,
+  .dark_container {
     margin-bottom: 20px;
   }
+
   .forecast-icon {
     margin: 40px 0 10px;
   }
+
   .forecast-icon img {
     width: 100px;
   }
-  .today-weather h3 {
+
+  .today-weather  h3 {
     font-size: 40px;
   }
+
+  .dark_today-weather h3 {
+    font-size: 40px;
+  }
+
+
   .city {
     min-height: 450px;
   }
+
+  .dark_city {
+    min-height: 450px;
+  }
+
   .title h2 {
     font-size: 25px;
   }
+
   .title h3 {
     font-size: 14px;
   }
-  .date-time {
+
+  .date-time,
+  .dark_date-time {
     width: 100%;
     padding: 0;
   }
+
   .dmy {
     padding: 0;
     margin-bottom: 35px;
     text-align: center;
     width: 100%;
   }
+
   div#txt {
     font-size: 30px;
   }
+
   .date {
     font-size: 22px;
   }
+
   .temperature {
     text-align: center;
     width: 100%;
   }
+
   .copyright {
     padding: 20px;
   }
+
   .temperature p {
     font-size: 60px;
     padding-bottom: 15px;
   }
+
   .forecast-icon img {
     width: 65px;
   }
+
   .today-weather h3 {
     font-size: 30px;
   }
+
+  .dark_today-weather h3 {
+    font-size: 30px;
+  }
+
   .copyright p {
     line-height: 25px;
     font-size: 13px;
   }
-  .container {
+
+  .container,
+  .dark_container {
     height: 60vh;
     margin-top: 60px;
   }
+
   .mb-icon {
     top: 20% !important;
     display: block !important;
   }
+
   .forecast-icon,
   .today-weather h3 {
     display: none;
   }
+
+  .forecast-icon,.dark_today-weather h3 {
+    display: none;
+  }
+
   .today-weather {
+    background-color: rgba(0, 0, 0, 0.73);
+    margin-top: 22px;
+    padding: 25px 0px;
+  }
+  .dark_today-weather {
     background-color: rgba(0, 0, 0, 0.73);
     margin-top: 22px;
     padding: 25px 0px;
@@ -563,26 +717,31 @@ div#txt {
     line-height: 1.5em;
     letter-spacing: 0;
   }
-  .city {
+
+  .city,
+  .dark_city {
     min-height: 315px;
   }
+
   .dmy {
     margin-bottom: 30px;
   }
+
   .date {
     font-size: 18px;
   }
+
   .temperature p {
     padding-bottom: 15px;
   }
 }
 
-/*-- //Responsive Code --*/
 .cityHead {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .search-box {
   display: flex;
   align-items: center;
@@ -591,6 +750,16 @@ div#txt {
   position: relative;
   z-index: 2;
 }
+
+.dark_search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
 .search-box .img-box {
   background: rgb(255, 255, 255, 0.2);
   border-radius: 50%;
@@ -601,10 +770,35 @@ div#txt {
   justify-content: center;
   padding: 2px;
 }
+
+.temp1 {
+  background: rgba(22, 22, 22, 0.2);
+  border-radius: 50%;
+  /* height: 38px; */
+}
+
+
+.dark_search-box .img-box {
+  background: rgba(67, 63, 63, 0.2);
+  border-radius: 50%;
+  height: 32px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
 .search-box img {
   width: 60%;
   cursor: pointer;
 }
+
+.dark_search-box img {
+  width: 60%;
+  cursor: pointer;
+}
+
 .search-box .search-bar {
   border: none;
   padding: 10px 11px;
@@ -613,14 +807,30 @@ div#txt {
   border-bottom: 1px solid;
   font-size: 16px;
 }
+
+.dark_search-box .search-bar {
+  border: none;
+  padding: 10px 11px;
+  background: transparent;
+  color: black;
+  border-bottom: 1px solid;
+  font-size: 16px;
+}
+
 .search-box .search-bar::placeholder {
   color: white;
 }
+
+.dark_search-box .search-bar::placeholder {
+  color: black;
+}
+
 .search-bar:focus {
   outline: none;
   border-bottom: 1px solid gray;
   transition: all 1s ease-in-out;
 }
+
 .mb-icon {
   height: 100%;
   position: absolute;
@@ -629,6 +839,7 @@ div#txt {
   z-index: 1;
   display: none;
 }
+
 .mb-icon p {
   color: white;
   width: fit-content;
@@ -637,13 +848,16 @@ div#txt {
   top: 2%;
   font-size: 25px;
 }
+
 .footer-info {
   color: white;
 }
+
 .footer-info a {
   color: floralwhite;
   font-weight: bold;
 }
+
 .hh_button {
   display: inline-block;
   text-decoration: none;
@@ -661,4 +875,84 @@ div#txt {
   position: absolute;
   right: 20px;
   top: 1.5%;
+}
+
+/* ............................. */
+
+.dark_mode {
+  margin-top: -15px;
+  margin-left: 10px;
+}
+
+.dark_mode_label {
+  width: 65px;
+  height: 30px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dark_mode_label:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: linear-gradient(180deg, #f7ce98, #f4b04b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.dark_mode_input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.dark_mode_input:checked+.dark_mode_label {
+  background: #242424;
+}
+
+.dark_mode_input:checked+.dark_mode_label:after {
+  left: 62px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+.dark_mode_label:active:after {
+  width: 30px;
+}
+
+.dark_mode_label svg {
+  position: absolute;
+  width: 20px;
+  top: 5px;
+  z-index: 100;
+}
+
+.dark_mode_label svg.sun {
+  left: 5px;
+  fill: #fff;
+  transition: 0.3s;
+}
+
+.dark_mode_label svg.moon {
+  left: 40px;
+  fill: #a4a4a4;
+  transition: 0.3s;
+}
+
+.dark_mode_input:checked+.dark_mode_label svg.sun {
+  fill: white;
+}
+
+.dark_mode_input:checked+.dark_mode_label svg.moon {
+  fill: #fff;
 }

@@ -2,7 +2,6 @@ import React from "react";
 import apiKeys from "./apiKeys";
 import Clock from "react-live-clock";
 import Forcast from "./forcast";
-// import loader from "./images/WeatherIcons.gif";
 import ReactAnimatedWeather from "react-animated-weather";
 const dateBuilder = (d) => {
   let months = [
@@ -56,7 +55,15 @@ class Weather extends React.Component {
     sunrise: undefined,
     sunset: undefined,
     errorMsg: undefined,
+    theme: false,
   };
+
+  handleClick = () => {
+    this.setState((prevState) => ({
+      theme: !prevState.theme
+    }));
+  };
+
   componentDidMount() {
     if (navigator.geolocation) {
       this.getPosition()
@@ -139,39 +146,42 @@ class Weather extends React.Component {
 
   render() {
     if (this.state.temperatureC) {
+      const clockStyle = this.state.theme ? null : { color: 'black' };
       return (
         <React.Fragment>
-          <div className="city">
-            <div className="title">
-              <h2>{this.state.city}</h2>
-              <h3>{this.state.country}</h3>
-            </div>
-            <div className="mb-icon">
-              {" "}
-              <ReactAnimatedWeather
-                icon={this.state.icon}
-                color={defaults.color}
-                size={defaults.size}
-                animate={defaults.animate}
-              />
-              <p>{this.state.main}</p>
-            </div>
-            <div className="date-time">
-              <div className="dmy">
-                <div id="txt"></div>
-                <div className="current-time">
-                  <Clock format="HH:mm:ss" interval={1000} ticking={true} />
+          <div className={this.state.theme ? "container" : 'dark_container'}>
+            <div className={this.state.theme ? "city" : 'dark_city'}>
+              <div className={this.state.theme ? "title" :  "dark_title"}>
+                <h2>{this.state.city}</h2>
+                <h3>{this.state.country}</h3>
+              </div>
+              <div className="mb-icon">
+                {" "}
+                <ReactAnimatedWeather
+                  icon={this.state.icon}
+                  color={defaults.color}
+                  size={defaults.size}
+                  animate={defaults.animate}
+                />
+                <p>{this.state.main}</p>
+              </div>
+              <div className={this.state.theme? "date-time" : "dark_date-time"}>
+                <div className="dmy">
+                  <div id="txt"></div>
+                  <div className="current-time">
+                    <Clock format="HH:mm:ss" interval={1000} style={clockStyle} ticking={true} />
+                  </div>
+                  <div className="current-date">{dateBuilder(new Date())}</div>
                 </div>
-                <div className="current-date">{dateBuilder(new Date())}</div>
-              </div>
-              <div className="temperature">
-                <p>
-                  {this.state.temperatureC}°<span>C</span>
-                </p>
+                <div className="temperature">
+                  <p>
+                    {this.state.temperatureC}°<span>C</span>
+                  </p>
+                </div>
               </div>
             </div>
+            <Forcast theme = {this.state.theme} click={this.handleClick} icon={this.state.icon} weather={this.state.main} />
           </div>
-          <Forcast icon={this.state.icon} weather={this.state.main} />
         </React.Fragment>
       );
     } else {

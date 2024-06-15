@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import apiKeys from "./apiKeys";
 import ReactAnimatedWeather from "react-animated-weather";
+import { ReactComponent as Sun } from './images/Sun.svg'
+import { ReactComponent as Moon } from './images/Moon.svg'
+
 
 function Forcast(props) {
   const [query, setQuery] = useState("");
@@ -10,8 +13,7 @@ function Forcast(props) {
   const search = (city) => {
     axios
       .get(
-        `${apiKeys.base}weather?q=${
-          city != "[object Object]" ? city : query
+        `${apiKeys.base}weather?q=${city != "[object Object]" ? city : query
         }&units=metric&APPID=${apiKeys.key}`
       )
       .then((response) => {
@@ -34,24 +36,37 @@ function Forcast(props) {
   useEffect(() => {
     search("Bangalore");
   }, []);
-
+  
   return (
     <div className="forecast">
+      <div className="dark_mode">
+        <input
+          className="dark_mode_input"
+          type="checkbox"
+          id="darkmode-toggle"
+          checked={props.theme}
+          onChange={props.click}
+        />
+        <label className="dark_mode_label" htmlFor="darkmode-toggle">
+          {props.theme ? <Sun />: <Moon />}
+        </label>
+      </div>
       <div className="forecast-icon">
         <ReactAnimatedWeather
           icon={props.icon}
-          color={defaults.color}
+          color={props.theme ? defaults.color : 'black'}
           size={defaults.size}
           animate={defaults.animate}
         />
       </div>
-      <div className="today-weather">
+      <div className={props.theme ? "today-weather" : 'dark_today-weather'}>
         <h3>{props.weather}</h3>
-        <div className="search-box">
+        <div className={props.theme ? "search-box" : 'dark_search-box'}>
           <input
             type="text"
             className="search-bar"
-            placeholder="Search any city"
+            size='28'
+            placeholder="Enter City Name or Zip Code"
             onChange={(e) => setQuery(e.target.value)}
             value={query}
           />
@@ -59,7 +74,7 @@ function Forcast(props) {
             {" "}
             <img
               alt='searchIcon'
-              src="https://images.avishkaar.cc/workflow/newhp/search-white.png"
+              src={props.theme ? "https://images.avishkaar.cc/workflow/newhp/search-white.png" : "https://res.cloudinary.com/dv99nu7xv/image/upload/v1718470781/icons8-search-50_hlxubu.png"}
               onClick={search}
             />
           </div>
@@ -74,7 +89,7 @@ function Forcast(props) {
                 </p>
                 <img
                   alt="weatherIcon"
-                  className="temp"
+                  className={props.theme ? null : "temp1"}
                   src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
                 />
               </li>

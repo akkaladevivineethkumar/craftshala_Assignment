@@ -5,9 +5,9 @@ import "./App.css";
 function App() {
   return (
     <React.Fragment>
-      <div className="container">
+      {/* <div className="container"> */}
         <CurrentLocation />
-      </div>
+      {/* </div> */}
     </React.Fragment>
   );
 }
